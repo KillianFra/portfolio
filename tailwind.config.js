@@ -13,6 +13,9 @@ export default {
       fontFamily: {
         Sansita: ["Sansita", "sans-serif"],
       },
+      backgroundImage: {
+          'watch': "url('/img/image1.jpg')",
+      }
     },
   },
   plugins: [],

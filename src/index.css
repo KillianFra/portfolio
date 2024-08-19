@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 #root {
-    height: 100vh;
-    background-color: #121212;
+  background-color: #121212;
 }
+
+

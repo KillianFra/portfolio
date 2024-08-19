@@ -56,17 +56,17 @@ function CarouselTech() {
     }, [xTranslation, width, duration, rerender]);
     
     const TechList = [
-      { component: FaReact, style: "hover:text-blue-300" },
-      { component: FaAngular, style: "hover:text-red-400" },
-      { component: RiTailwindCssFill, style: "hover:text-blue-800"},
-      { component: FaJs, style: "hover:text-yellow-500"},
-      { component: SiVite, style: "hover:text-yellow-400" },
-      { component: FaCss3Alt, style: "hover:text-orange-400" },
-      { component: FaPython, style: "hover:text-yellow-400" },
-      { component: SiReactquery, style: "hover:text-red-300" },
-      { component: RiNextjsFill, style: "hover:text-white" },
-      { component: SiTypescript, style: "hover:text-blue-400" },
-      { component: SiFramer, style: "hover:text-white" },
+      { component: FaReact, style: "hover:text-blue-300", link: "https://fr.react.dev/"},
+      { component: FaAngular, style: "hover:text-red-400", link: "https://angular.dev/" },
+      { component: RiTailwindCssFill, style: "hover:text-blue-400", link: "https://tailwindcss.com/"},
+      { component: FaJs, style: "hover:text-yellow-500", link: "https://developer.mozilla.org/fr/docs/Web/JavaScript"},
+      { component: SiVite, style: "hover:text-yellow-400", link: "https://vitejs.dev/" },
+      { component: FaCss3Alt, style: "hover:text-orange-400", link: "" },
+      { component: FaPython, style: "hover:text-yellow-400", link: "" },
+      { component: SiReactquery, style: "hover:text-red-300", link: "https://tanstack.com/query/v3" },
+      { component: RiNextjsFill, style: "hover:text-white", link: "https://nextjs.org/" },
+      { component: SiTypescript, style: "hover:text-blue-400", link: "https://www.typescriptlang.org/" },
+      { component: SiFramer, style: "hover:text-white", link: "https://www.framer.com/motion/" },
     ];
     return (
       <>
@@ -75,7 +75,7 @@ function CarouselTech() {
           <motion.div className="flex justify-start gap-10" ref={ref} style={{ x: xTranslation }}>
             {[...TechList, ...TechList].map((tech, index) => {
               const IconComponent = tech.component;
-              return <IconComponent key={index} className={`text-6xl text-slate-400 ${tech.style} hover:scale-110 duration-200`} 
+              return <IconComponent key={index} className={`text-6xl text-slate-400 ${tech.style} hover:scale-110 duration-200 hover:cursor-pointer`} 
               onMouseEnter={() => {
                 setMustFinish(true);
                 setDuration(SLOW_DURATION);
@@ -85,6 +85,10 @@ function CarouselTech() {
                 setMustFinish(true);
                 setDuration(FAST_DURATION);
               }}
+
+              onClick={() => {
+                if (!tech.link) return
+                window.location.href = tech.link}}
               />;
             })}
           </motion.div>
