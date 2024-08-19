@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        "ct-black": "#0B0B0B",
+        "ct-black": "#121212",
         "ct-yellow": "#BAA43F",
         "ct-blue": "#4040BB",
         "ct-hover-yellow": "",
