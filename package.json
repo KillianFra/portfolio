@@ -1,5 +1,5 @@
 {
-  "homepage": "https://killianFra.github.io/portfolio",
+  "homepage": "https://KillianFra.github.io/portfolio",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "email": "email dev --dir src/emails",
     "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@react-email/components": "0.0.22",
