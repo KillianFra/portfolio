@@ -1,3 +1,4 @@
+import Contact from "../../Components/Contact";
 import Experiences from "../../Components/Experiences";
 import Hero from "../../Components/Hero";
 import Navbar from "../../Components/Navbar";
@@ -12,6 +13,7 @@ export default function Home() {
       <TechList />
       <Experiences />
       <Projects />
+      <Contact />
     </>
   );
 }
