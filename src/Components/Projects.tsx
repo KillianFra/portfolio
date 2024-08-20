@@ -44,7 +44,7 @@ function Card({ name, description, index }: CardProps) {
   return (
     <motion.div
       className={`bg-white min-w-64 w-64 min-h-96 flex items-end bg-center bg-cover bg-no-repeat text-white`}
-      style={{ backgroundImage: `url('/img/image${index}.jpg')` }}
+      style={{ backgroundImage: `url('${import.meta.env.BASE_URL}/img/image${index}.jpg')` }}
       variants={{
         hidden: { minWidth: "16rem", translateY: 0, filter: "grayscale(100%)" },
         stretch: { minWidth: "23rem", translateY: -6, filter: "grayscale(0%)" },
