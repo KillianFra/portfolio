@@ -11,7 +11,7 @@ export default {
         "ct-hover-blue": "",
       },
       fontFamily: {
-        Sansita: ["Sansita", "sans-serif"],
+        Sansita: ["Libre Franklin", "sans-serif"],
       },
       backgroundImage: {
           'watch': "url('/img/image1.jpg')",
