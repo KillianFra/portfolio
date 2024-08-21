@@ -1,43 +1,51 @@
-name: gh-pages
+name: Deploy
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  gh-pages:
+  build:
+    name: Build
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
 
-      - name: Setup Node.js
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: 16.x
-
-      - name: Install pnpm
-        run: npm install --global pnpm
-
-      - name: Cache .pnpm-store
-        uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
+          node-version: 16
 
       - name: Install dependencies
-        run: pnpm install
+        uses: bahmutov/npm-install@v1
 
-      - name: Build VuePress site
-        run: pnpm build
+      - name: Build project
+        run: npm run build
 
-      - name: Copy README.md
-        run: cp README.md dist
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
 
-      - name: Deploy GitHub Pages
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          publish_dir: ./dist
