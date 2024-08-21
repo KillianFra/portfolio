@@ -5,6 +5,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 interface experienceProps {
   name: string;
   missions: string[];
+  link: string;
 }
 
 export default function Experiences() {
@@ -12,14 +13,17 @@ export default function Experiences() {
     {
       name: "Fornier Grospaud Syneris",
       missions: ["Création de scripts Pentest en Bash", "Rapports et automatisation des intrusions", "Développement Applicatif d’outils de détection de menaces"],
+      link: "https://www.fgsynerys.fr/",
     },
     {
-      name: "OXD HACKER HACKTHEBOX",
+      name: "HACKTHEBOX",
       missions: ["Compétences améliorées en reconnaissance", "Détection et rapport de menaces", "Maîtrise des outils de Pentest"],
+      link: "https://app.hackthebox.com/users/543660",
     },
     {
-      name: "0xD GOD Tryhackme",
+      name: "0xB MASTER Tryhackme",
       missions: ["reconnaissance de menaces", "Détection des menaces et rapports", "Maîtrise de la gestion des outils de Pentest"],
+      link: "https://tryhackme.com/p/SunkenNunu",
     },
   ];
 
@@ -29,14 +33,14 @@ export default function Experiences() {
 
       <div className="flex flex-col items-center">
         {experiences.map((exp) => {
-          return <ExperienceItem name={exp.name} missions={exp.missions}></ExperienceItem>;
+          return <ExperienceItem name={exp.name} missions={exp.missions} link={exp.link}></ExperienceItem>;
         })}
       </div>
     </div>
   );
 }
 
-function ExperienceItem({ name, missions }: experienceProps) {
+function ExperienceItem({ name, missions, link }: experienceProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
@@ -60,10 +64,12 @@ function ExperienceItem({ name, missions }: experienceProps) {
         type: "spring",
       }}
     >
-      <div ref={ref} className="flex items-center gap-3 font-Sansita text-xl">
-        <div className="size-6 min-w-6 min-h-6 bg-white rounded-full"></div>
+      <div ref={ref} className="flex items-center justify-center gap-3 font-Sansita text-xl">
+        <div className="size-4 min-w-4 min-h-4 bg-white rounded-full"></div>
         <h1 className="font-Sansita uppercase">{name}</h1>
-        <MdOutlineArrowOutward className="hover:translate-y-[-6px] duration-300"/>
+        <a href={link}>
+          <MdOutlineArrowOutward className="hover:translate-y-[-6px] duration-300 hover:cursor-pointer" />
+        </a>
       </div>
       <div className=" mt-4 flex ml-3 gap-4 min-w-full">
         <div className="line min-w-0.5 bg-white mr-2"></div>

@@ -7,10 +7,10 @@ export default function Hero() {
         </h1>
         <p className="text-sm text-wrap mt-2">A web developer on a continuous journey, embracing the challenge of mastering new technologies that seem to pop up every week.</p>
         <div className="flex gap-10 mt-8">
-          <a href="#Projects" className="px-5 p-1.5 bg-slate-800 rounded-lg hover:bg-slate-800/70 duration-300">
+          <a href="#Projects" className="px-5 p-1.5 bg-slate-800 rounded-[0.25rem] hover:bg-slate-800/70 duration-300">
             See Projects
           </a>
-          <a href="mailto:fravalo.killian2@gmail.com" className="px-5 p-1.5 bg-red-900 rounded-lg  hover:bg-red-900/80 duration-300">
+          <a href="mailto:fravalo.killian2@gmail.com" className="px-5 p-1.5 bg-red-900 rounded-[0.25rem]  hover:bg-red-900/80 duration-300">
             Contact Me
           </a>
         </div>

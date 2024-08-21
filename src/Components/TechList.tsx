@@ -1,6 +1,6 @@
 import { FaReact, FaJs, FaCss3Alt, FaPython, FaAngular } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiTypescript, SiVite, SiFramer, SiReactquery } from "react-icons/si";
+import { SiTypescript, SiVite, SiFramer, SiReactquery, SiShadcnui } from "react-icons/si";
 
 import { animate, motion, useMotionValue } from "framer-motion";
 import useMeasure from "react-use-measure";
@@ -67,6 +67,7 @@ function CarouselTech() {
       { component: RiNextjsFill, style: "hover:text-white", link: "https://nextjs.org/" },
       { component: SiTypescript, style: "hover:text-blue-400", link: "https://www.typescriptlang.org/" },
       { component: SiFramer, style: "hover:text-white", link: "https://www.framer.com/motion/" },
+      { component: SiShadcnui, style: "hover:text-white", link: "https://ui.shadcn.com/" },
     ];
     return (
       <>
