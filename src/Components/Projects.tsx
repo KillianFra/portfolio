@@ -18,7 +18,7 @@ export default function Projects() {
 
   return (
     <div className="w-full flex flex-col mt-12 items-center text-white font-Sansita">
-      <h2 className="text-3xl">Some Projects. . .</h2>
+      <h2 className="text-3xl" id="Projects">Some Projects. . .</h2>
       <div className="cardContainer flex flex-wrap justify-center gap-10 mt-20 mb-10">
         {projects.map((project, index) => {
           return <Card name={project.name} description={project.description} index={index} />;
