@@ -1,50 +1,79 @@
-# React + TypeScript + Vite
+# Portfolio Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hey, it's Killian, this is my personal portfolio website! This project showcases my work, skills, and experiences as a developer's student.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Tech Stack](#tech-stack)
+- [Deployment](#deployment)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This portfolio is a single-page application (SPA) with a client-side routing provided by 'React-router'
 
-- Configure the top-level `parserOptions` property like this:
+**Live Demo**: [Portfolio Website](https://killianfra.github.io/portfolio/)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Features
+
+- **Responsive Design**: Optimized for various screen sizes and devices.
+- **Smooth Animations**: Leveraging `framer-motion` for interactive and engaging animations.
+- **Routing**: Single-page application with client-side routing using `react-router-dom`.
+- **Icons**: Rich icon library with `react-icons` for visual enhancements.
+- **State Management**: Efficient state management using React hooks and `react-use-measure`.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/killianFra/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   pnpm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   pnpm run build
+   ```
+
+## Tech Stack
+
+The project is built using the following technologies:
+
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Vite**: A fast build tool and development server.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Framer Motion**: A library for animations and gestures in React.
+- **React Router**: A library for routing in React applications.
+- **React Icons**: A collection of popular icons for React.
+
+## Deployment
+
+This portfolio is automatically deployed to GitHub Pages upon each push to the main branch. To manually deploy, run the following command:
+
+```bash
+pnpm run deploy
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## License
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+This project is licensed under the MIT License. Feel free to use and modify the code.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+Feel free to explore the code and reach out if you have any questions or suggestions!
