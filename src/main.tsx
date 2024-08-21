@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {
-    path: "/portfolio/",
+    path: "/",
     element: <Home />,
   },
 ], {basename: import.meta.env.BASE_URL});
