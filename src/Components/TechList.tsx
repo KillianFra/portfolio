@@ -71,28 +71,28 @@ function CarouselTech() {
     ];
     return (
       <>
-      <div className="flex justify-start items-center w-2/3 max-w-[50%] h-20 overflow-hidden relative">
-        <div className="w-12 h-24 bg-gradient-to-r from-ct-black/100 z-10 absolute"></div>
-          <motion.div className="flex justify-start gap-10" ref={ref} style={{ x: xTranslation }}>
-            {[...TechList, ...TechList].map((tech, index) => {
-              const IconComponent = tech.component;
-              return <IconComponent key={index} className={`text-6xl text-slate-400 ${tech.style} hover:scale-110 duration-200 hover:cursor-pointer`} 
-              onMouseEnter={() => {
-                setMustFinish(true);
-                setDuration(SLOW_DURATION);
-              }}
-              
-              onMouseLeave={() => {
-                setMustFinish(true);
-                setDuration(FAST_DURATION);
-              }}
+      <div className="flex justify-start items-center w-full lg:w-2/3 h-20 overflow-hidden relative">
+        <div className="w-12 h-24 bg-gradient-to-r from-ct-black/100 to-transparent z-10 absolute"></div>
+        <motion.div className="flex justify-start gap-10" ref={ref} style={{ x: xTranslation }}>
+          {[...TechList, ...TechList].map((tech, index) => {
+            const IconComponent = tech.component;
+            return <IconComponent key={index} className={`text-6xl text-slate-400 ${tech.style} hover:scale-110 duration-200 hover:cursor-pointer`} 
+            onMouseEnter={() => {
+              setMustFinish(true);
+              setDuration(SLOW_DURATION);
+            }}
+            
+            onMouseLeave={() => {
+              setMustFinish(true);
+              setDuration(FAST_DURATION);
+            }}
 
-              onClick={() => {
-                if (!tech.link) return
-                window.location.href = tech.link}}
-              />;
-            })}
-          </motion.div>
+            onClick={() => {
+              if (!tech.link) return
+              window.location.href = tech.link}}
+            />;
+          })}
+        </motion.div>
       <div className="w-12 h-24 bg-gradient-to-l from-ct-black/100 z-10 absolute right-0"></div>
       </div>
     </>
